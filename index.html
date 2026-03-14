@@ -183,6 +183,37 @@
       margin-bottom: 14px;
     }
 
+    .job-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      object-fit: contain;
+      background: #fff;
+      padding: 3px;
+      flex-shrink: 0;
+    }
+
+    .job-logo-placeholder {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .job-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
     .job-items {
       list-style: none;
       padding: 0;
@@ -332,7 +363,11 @@
 
       <div class="job">
         <div class="job-header">
-          <span class="job-company">Square (Block)</span>
+          <div class="job-header-left">
+            <img class="job-logo" src="https://logo.clearbit.com/block.xyz" alt="Block" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="job-logo-placeholder" style="display:none">BLK</div>
+            <span class="job-company">Square (Block)</span>
+          </div>
           <span class="job-dates">Feb 2023 – Feb 2026</span>
         </div>
         <div class="job-role">Senior iOS Engineer, Developers Mobile · Remote</div>
@@ -347,7 +382,11 @@
 
       <div class="job">
         <div class="job-header">
-          <span class="job-company">GameStop</span>
+          <div class="job-header-left">
+            <img class="job-logo" src="https://logo.clearbit.com/gamestop.com" alt="GameStop" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="job-logo-placeholder" style="display:none">GME</div>
+            <span class="job-company">GameStop</span>
+          </div>
           <span class="job-dates">Feb 2022 – Dec 2022</span>
         </div>
         <div class="job-role">Senior iOS Blockchain Engineer · Remote</div>
@@ -360,7 +399,11 @@
 
       <div class="job">
         <div class="job-header">
-          <span class="job-company">Microsoft</span>
+          <div class="job-header-left">
+            <img class="job-logo" src="https://logo.clearbit.com/microsoft.com" alt="Microsoft" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="job-logo-placeholder" style="display:none">MSFT</div>
+            <span class="job-company">Microsoft</span>
+          </div>
           <span class="job-dates">Dec 2020 – Feb 2022</span>
         </div>
         <div class="job-role">Software Engineer 2 · Remote</div>
@@ -372,7 +415,11 @@
 
       <div class="job">
         <div class="job-header">
-          <span class="job-company">Bleachr, LLC</span>
+          <div class="job-header-left">
+            <img class="job-logo" src="https://logo.clearbit.com/bleachr.co" alt="Bleachr" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="job-logo-placeholder" style="display:none">BLC</div>
+            <span class="job-company">Bleachr, LLC</span>
+          </div>
           <span class="job-dates">Apr 2016 – Dec 2020</span>
         </div>
         <div class="job-role">Senior Mobile Software Engineer / Lead Mobile Design Architect · Minneapolis, MN</div>
@@ -383,7 +430,11 @@
 
       <div class="job">
         <div class="job-header">
-          <span class="job-company">Jump Technologies, Inc.</span>
+          <div class="job-header-left">
+            <img class="job-logo" src="https://logo.clearbit.com/jumptechnologies.com" alt="Jump Technologies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="job-logo-placeholder" style="display:none">JMP</div>
+            <span class="job-company">Jump Technologies, Inc.</span>
+          </div>
           <span class="job-dates">May 2015 – Apr 2016</span>
         </div>
         <div class="job-role">Mobile Software Engineer · Minneapolis, MN</div>
@@ -394,7 +445,11 @@
 
       <div class="job">
         <div class="job-header">
-          <span class="job-company">Menards, Inc.</span>
+          <div class="job-header-left">
+            <img class="job-logo" src="https://logo.clearbit.com/menards.com" alt="Menards" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="job-logo-placeholder" style="display:none">MND</div>
+            <span class="job-company">Menards, Inc.</span>
+          </div>
           <span class="job-dates">Sep 2013 – May 2015</span>
         </div>
         <div class="job-role">Mobile Software Engineer · Eau Claire, WI</div>
