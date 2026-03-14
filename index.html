@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brandon Jenniges — iOS Engineer</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --green: #3fb950;
+      --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 32px;
+      margin-bottom: 40px;
+    }
+
+    .name {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .title {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+
+    .bio {
+      color: var(--muted);
+      max-width: 640px;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .links a {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .links a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Section */
+    section {
+      margin-bottom: 40px;
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .skill-group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 14px 16px;
+    }
+
+    .skill-group-name {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2px 8px;
+      color: var(--muted);
+    }
+
+    /* Experience */
+    .job {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      background: var(--surface);
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 2px;
+    }
+
+    .job-company {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .job-dates {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .job-role {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+
+    .job-items {
+      list-style: none;
+      padding: 0;
+    }
+
+    .job-items li {
+      padding-left: 14px;
+      position: relative;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .job-items li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .job-items li strong {
+      color: var(--text);
+    }
+
+    /* Education */
+    .edu {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .edu-school {
+      font-weight: 600;
+    }
+
+    .edu-degree {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--green);
+    }
+
+    .edu-dates {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      margin-top: 40px;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      .name { font-size: 1.5rem; }
+      .job-header { flex-direction: column; }
+      .edu { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="name">Brandon Jenniges</div>
+      <div class="title">// Senior iOS Engineer</div>
+      <p class="bio">
+        10+ years of experience building across the spectrum — from sole mobile dev at early startups to payments infrastructure handling millions of transactions. I care about craft, I like hard problems, and I own what I build.
+      </p>
+      <div class="links">
+        <a href="mailto:brandon.jenniges@icloud.com">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M1.75 2A1.75 1.75 0 0 0 0 3.75v.736a.75.75 0 0 0 .579.73L8 7.621l7.421-2.405A.75.75 0 0 0 16 4.486V3.75A1.75 1.75 0 0 0 14.25 2H1.75ZM16 6.614l-7.55 2.446a.75.75 0 0 1-.9 0L0 6.614V12.25C0 13.216.784 14 1.75 14h12.5A1.75 1.75 0 0 0 16 12.25V6.614Z"/></svg>
+          brandon.jenniges@icloud.com
+        </a>
+        <a href="https://linkedin.com/in/bjenniges/" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+          linkedin.com/in/bjenniges
+        </a>
+        <a href="https://github.com/brandonjenniges" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          github.com/brandonjenniges
+        </a>
+      </div>
+    </header>
+
+    <section>
+      <div class="section-label">Skills</div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-name">Languages</div>
+          <div class="skill-tags">
+            <span class="tag">Swift</span>
+            <span class="tag">Objective-C</span>
+            <span class="tag">Kotlin</span>
+            <span class="tag">Java</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">Frameworks</div>
+          <div class="skill-tags">
+            <span class="tag">SwiftUI</span>
+            <span class="tag">UIKit</span>
+            <span class="tag">Combine</span>
+            <span class="tag">Async/Await</span>
+            <span class="tag">Core Data</span>
+            <span class="tag">MVVM</span>
+            <span class="tag">XCTest</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">Tools</div>
+          <div class="skill-tags">
+            <span class="tag">Xcode</span>
+            <span class="tag">Git</span>
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">Bazel</span>
+            <span class="tag">Fastlane</span>
+            <span class="tag">Instruments</span>
+            <span class="tag">Datadog</span>
+            <span class="tag">REST APIs</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">Platforms</div>
+          <div class="skill-tags">
+            <span class="tag">iOS</span>
+            <span class="tag">Android</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">Experience</div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">Square (Block)</span>
+          <span class="job-dates">Feb 2023 – Feb 2026</span>
+        </div>
+        <div class="job-role">Senior iOS Engineer, Developers Mobile · Remote</div>
+        <ul class="job-items">
+          <li><strong>Mobile Payments SDK</strong>: Developed and maintained features across multiple SDKs used internally by Block and by third-party developers to process millions of payments per week using Square hardware, including offline payment capabilities.</li>
+          <li><strong>New Payment Method</strong>: Led iOS development of a new payment method integrated into the Square Point of Sale app enabling buyers to apply funds from third-party partner programs toward purchases.</li>
+          <li><strong>Observability Infrastructure</strong>: Designed and led the observability architecture for the Mobile Payments SDK, shifting the team from reactive to proactive incident response. Reduced on-call response time and served as blueprint for the Android team.</li>
+          <li><strong>SwiftUI Adoption</strong>: Drove SwiftUI support across SDKs, ran internal training sessions, and paired with teammates to accelerate adoption of modern UI patterns.</li>
+          <li><strong>Agentic AI Workflows</strong>: Served as AI Champion, pioneering agentic development workflows using Claude Code and git worktrees to parallelize tasks and increase velocity. Mentored teammates on adoption.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">GameStop</span>
+          <span class="job-dates">Feb 2022 – Dec 2022</span>
+        </div>
+        <div class="job-role">Senior iOS Blockchain Engineer · Remote</div>
+        <ul class="job-items">
+          <li><strong>GameStop Wallet</strong>: Built functionality for the iOS Wallet app including viewing, sending, and managing ERC-20 tokens and NFTs on Ethereum mainnet and Layer 2 networks.</li>
+          <li><strong>Architecture Modernization</strong>: Led modernization using SwiftUI, Combine, and Async/Await, mentoring junior engineers on modern iOS development practices.</li>
+          <li><strong>Testing Standards</strong>: Established best practices for unit and UI testing using XCTest, laying the foundation for a more reliable and maintainable codebase.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">Microsoft</span>
+          <span class="job-dates">Dec 2020 – Feb 2022</span>
+        </div>
+        <div class="job-role">Software Engineer 2 · Remote</div>
+        <ul class="job-items">
+          <li><strong>Activity Feed</strong>: Served as iOS DRI for the activity feed, collaborating with Android and server teams to ship real-time in-app notifications for comments, likes, and video activity to millions of users.</li>
+          <li><strong>SwiftUI &amp; Accessibility</strong>: Established team best practices for SwiftUI and Combine. Ensured strict accessibility standards to maximize reach and usability.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">Bleachr, LLC</span>
+          <span class="job-dates">Apr 2016 – Dec 2020</span>
+        </div>
+        <div class="job-role">Senior Mobile Software Engineer / Lead Mobile Design Architect · Minneapolis, MN</div>
+        <ul class="job-items">
+          <li><strong>TennisONE &amp; Bleachr</strong>: Led iOS development of the TennisONE and Bleachr apps, driving key features including a rewards store, in-seat ordering, and home screen feed across a growing mobile team.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">Jump Technologies, Inc.</span>
+          <span class="job-dates">May 2015 – Apr 2016</span>
+        </div>
+        <div class="job-role">Mobile Software Engineer · Minneapolis, MN</div>
+        <ul class="job-items">
+          <li><strong>iOS &amp; Android</strong>: Built and maintained features for enterprise mobile applications as the sole mobile developer.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">Menards, Inc.</span>
+          <span class="job-dates">Sep 2013 – May 2015</span>
+        </div>
+        <div class="job-role">Mobile Software Engineer · Eau Claire, WI</div>
+        <ul class="job-items">
+          <li><strong>iOS &amp; Android</strong>: Contributed to iOS and Android application development for internal store operations at one of the largest home improvement retailers in the US.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">Education</div>
+      <div class="edu">
+        <div>
+          <div class="edu-school">Southwest Minnesota State University</div>
+          <div class="edu-degree">B.S. in Computer Science</div>
+        </div>
+        <div class="edu-dates">Jan 2010 – Dec 2013</div>
+      </div>
+    </section>
+
+    <footer>
+      <span>brandon.jenniges@icloud.com</span>
+    </footer>
+
+  </div>
+</body>
+</html>
