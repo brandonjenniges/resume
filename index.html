@@ -53,6 +53,26 @@
       margin-bottom: 40px;
     }
 
+    .header-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 2px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .header-text {
+      flex: 1;
+    }
+
     .name {
       font-size: 2rem;
       font-weight: 600;
@@ -281,6 +301,8 @@
 
     @media (max-width: 600px) {
       .name { font-size: 1.5rem; }
+      .header-inner { flex-direction: column; align-items: center; text-align: center; }
+      .links { justify-content: center; }
       .job-header { flex-direction: column; }
       .edu { flex-direction: column; }
     }
@@ -290,6 +312,9 @@
   <div class="container">
 
     <header>
+      <div class="header-inner">
+        <img class="avatar" src="brandon.png" alt="Brandon Jenniges" />
+        <div class="header-text">
       <div class="name">Brandon Jenniges</div>
       <div class="title">// Senior iOS Engineer</div>
       <p class="bio">
@@ -309,6 +334,8 @@
           github.com/brandonjenniges
         </a>
       </div>
+        </div><!-- /header-text -->
+      </div><!-- /header-inner -->
     </header>
 
     <section>
