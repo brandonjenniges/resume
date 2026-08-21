@@ -6,7 +6,7 @@
 % License : MIT
 %------------------------
 
-\documentclass[a4paper,20pt]{article}
+\documentclass[letterpaper,20pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -44,10 +44,10 @@
 
 %-------------------------
 % Custom commands
-\newcommand{\resumeItem}[2]{
-  \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
-  }
+\newcommand{\resumeItem}[2]{%
+  \item\small{%
+    \textbf{#1}{: #2\vspace{-2pt}}%
+  }%
 }
 
 \newcommand{\resumeItemWithoutTitle}[1]{
@@ -87,7 +87,7 @@
 
 \vspace{10pt}
 
-\noindent\small{Senior iOS engineer with 10+ years of experience building across the spectrum, from being the sole mobile dev at early startups to building payments infrastructure handling millions of transactions. I care about craft, I like hard problems, and I own what I build.}
+\noindent\small{Senior iOS engineer with 12+ years of experience, from sole mobile dev at early startups to payments infrastructure handling millions of transactions a week.}
 
 \vspace{10pt}
 \section{Skills Summary}
@@ -101,6 +101,13 @@
 \vspace{-5pt}
 \section{Experience}
   \resumeSubHeadingListStart
+
+    \resumeSubheading{Fi}{Remote}
+    {Senior iOS Engineer}{Apr 2026 -- Present}
+    \resumeItemListStart
+        \resumeItem{Social Engagement}
+          {Leading projects building social engagement features for the Fi app, driving the design and iOS implementation of experiences that connect members with each other.}
+    \resumeItemListEnd
 
     \resumeSubheading{Square (Block)}{Remote}
     {Senior iOS Engineer, Developers Mobile}{Feb 2023 -- Feb 2026}
@@ -124,8 +131,6 @@
           {Built functionality for the iOS Wallet app including viewing, sending, and managing ERC-20 tokens and NFTs on Ethereum mainnet and Layer 2 networks.}
         \resumeItem{Architecture Modernization}
           {Led efforts to modernize app architecture using SwiftUI, Combine, and Async/Await, mentoring junior engineers on modern iOS development practices.}
-        \resumeItem{Testing Standards}
-          {Established best practices for unit and UI testing using XCTest, laying the foundation for a more reliable and maintainable codebase.}
     \resumeItemListEnd
 
     \resumeSubheading{Microsoft}{Remote}
